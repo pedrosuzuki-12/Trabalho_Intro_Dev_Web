@@ -72,8 +72,6 @@ Uma simulação de compra registrada no Beeceptor
 
 ## 5. Resultados dos Testes
 
-Esta seção será preenchida à medida que os testes forem executados. 
-
 ---
 
 ## 6. Procedimentos para Executar
