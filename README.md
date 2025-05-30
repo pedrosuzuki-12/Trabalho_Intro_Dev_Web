@@ -66,29 +66,8 @@ O desenvolvimento do projeto é baseado nas tecnologias web padrão:
 
 ## 4. Plano de Testes
 
-O plano de testes visa garantir a funcionalidade e usabilidade da aplicação. Serão realizados testes para as seguintes áreas:
+O plano de testes visa garantir a funcionalidade e usabilidade da aplicação.
 
-- **Navegação:**
-    - Verificar se os links de navegação (`Home`, `Jerseys`, `Carrinho`, `Login/Logout`, seções administrativas) exibem as seções corretas.
-    - Testar a navegação em diferentes cenários (usuário logado/deslogado, cliente/admin).
-- **Responsividade e Compatibilidade:**
-    - Verificar se o site carrega corretamente e mantém o layout responsivo em diversos navegadores (Chrome, Firefox, Edge, Safari) e resoluções de tela (desktop, tablet, mobile).
-- **Autenticação:**
-    - Testar login e logout para usuários clientes e administradores com credenciais válidas e inválidas.
-    - Verificar redirecionamentos após o login e acesso restrito a áreas administrativas.
-- **Gerenciamento de Produtos (Administrador):**
-    - Testar as funcionalidades de CRUD (Criação, Leitura, Atualização, Exclusão) de produtos no painel administrativo.
-    - Validar a persistência dos dados no `localStorage` e a simulação de requisições via **Beeceptor** para essas operações.
-- **Carrinho de Compras:**
-    - Testar adição, remoção e atualização da quantidade de produtos no carrinho.
-    - Verificar o cálculo correto do subtotal e total.
-- **Simulação de Pagamento:**
-    - Testar o fluxo de checkout e a simulação de pagamento com diferentes cenários (número de cartão válido/inválido, etc.).
-    - Verificar o feedback da compra (sucesso/falha).
-- **Detalhes do Produto:**
-    - Testar se ao clicar em um produto, a página de detalhes exibe as informações corretas (nome, descrição, preço, etc.) e a funcionalidade de "momentos marcantes" (se implementada).
-
----
 
 ## 5. Resultados dos Testes
 
