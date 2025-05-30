@@ -49,11 +49,7 @@ O site é estruturado para apresentar:
 
 https://www.figma.com/design/fDdvSGY9pd2x6SHDP2jHrW/Untitled?node-id=0-1&m=dev&t=CzRNXHTVi0VLTHho-1
 
-### Persistência de Dados (Simulada):
-Para simular as requisições a um backend, utilizamos o **Beeceptor** como um mock API. As informações planejadas para serem salvas (e que atualmente são manipuladas via `localStorage` no frontend, com a estrutura para futura integração com o Beeceptor) incluem:
-- Dados dos produtos (nome, preço, descrição, quantidade em estoque por tamanho, URL da imagem).
-- Dados dos administradores e clientes (nome, ID, endereço, telefone, e-mail).
-- Histórico de compras realizadas (estrutura para futura implementação).
+
 
 ---
 
