@@ -119,13 +119,13 @@ Durante a fase de desenvolvimento e integração dos mockups, identificamos os s
 
 Este projeto foca na implementação de funcionalidades essenciais de frontend e na simulação de interações com um backend. A estrutura modular do código e a utilização de `localStorage` para persistência de dados (atualmente) e **Beeceptor** para simulação de chamadas de API permitem uma base sólida para futuras expansões.
 
-### Estrutura Atual do Projeto:
-...
-/ (root)
-├── Trabalho_Home.html  (Estrutura HTML principal da aplicação)
-├── U-Playercss.css     (Folha de estilos CSS para o layout e responsividade)
-├── script.js           (Lógica JavaScript para navegação, dados, carrinho, autenticação e CRUD simulado)
-└── logo.jpg            (Ativo de imagem para o logo da loja)
-...
+```markdown
+### Estrutura do Projeto:
 
----
+| Arquivo/Diretório      | Descrição                                                                         |
+| :--------------------- | :-------------------------------------------------------------------------------- |
+| `/ (root)`             | Diretório raiz do projeto.                                                        |
+| `├── Trabalho_Home.html` | Contém a estrutura HTML principal da aplicação, incluindo todas as seções.      |
+| `├── U-Playercss.css`    | Define os estilos visuais e as regras de responsividade para todo o site.       |
+| `├── script.js`          | Lógica JavaScript para navegação, gerenciamento de dados, carrinho de compras, autenticação de usuários e simulação de operações CRUD. |
+| `└── logo.jpg`           | O arquivo de imagem que representa o logotipo da U-Player Online Store.           |
