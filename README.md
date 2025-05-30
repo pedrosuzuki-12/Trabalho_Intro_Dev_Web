@@ -66,7 +66,8 @@ O desenvolvimento do projeto é baseado nas tecnologias web padrão:
 
 ## 4. Plano de Testes
 
-O plano de testes visa garantir a funcionalidade e usabilidade da aplicação.
+Uma simulação de compra registrada no Beeceptor
+![{CFB68B32-9DB1-4E21-AB3B-FEBD8D46F509}](https://github.com/user-attachments/assets/e104243f-fa9f-4a0a-a2ed-56d193b98536)
 
 
 ## 5. Resultados dos Testes
