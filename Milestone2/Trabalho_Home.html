@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U-Player Online Store - Jerseys</title>
+    <link rel="stylesheet" type="text/css" href="U-Playercss.css">
+</head>
+<body>
+
+  <header id="mainHeader">
+  <a href="#" onclick="showSection('Home')" class="logo-title">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <h1 class="title">U-Player</h1>
+  </a>
+    <nav>
+      <div class="nav">
+        <a href="#" onclick="showSection('Home')" class="nav-link">Home</a>
+        <a href="#" onclick="showSection('Jerseys')" class="nav-link">Jerseys</a>
+        <a href="#" onclick="showSection('carrinho')" class="nav-link">Carrinho</a>
+        <a href="#" id="loginNavLink" onclick="showSection('loginView')" class="nav-link">Login</a>
+        <a href="#" id="logoutNavLink" onclick="logoutUser()" class="nav-link" style="display:none;">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <section id="Home">
+      <section class="banner">
+        <h2>Se Sinta Igual sua Maior Inspiração!</h2>
+        <p>U-Player, a loja em que você se ve em seu jogador favorito!</p>
+      </section>
+      <h3>Jerseys em Destaque</h3>
+      <div id="productListHome" class="produtos">
+      </div>
+    </section>
+
+    <section id="Jerseys" style="display:none;">
+      <section class="banner">  <h2>Se Sinta Igual sua Maior Inspiração!</h2>
+        <p>Encontre o seu jogador favorito e relembre momentos marcantes</p>
+      </section>
+      <h3>Todas as Jerseys</h3>
+      <div id="productListJerseys" class="produtos">
+      </div>
+    </section>
+
+    <section id="carrinho" style="display:none;">
+      <h3>Seu Carrinho</h3>
+      <div id="cartItemsContainer">
+      </div>
+      <div id="checkoutArea" class="checkout-area-style">
+        <div id="creditCardFormContainer" style="display: none;">
+          <h4>Informações de Pagamento</h4>
+          <div class="form-group-cc">
+            <label for="ccNumber">Número do Cartão de Crédito:</label>
+            <input type="text" id="ccNumber" placeholder="xxxx xxxx xxxx xxxx" />
+          </div>
+          <div class="payment-buttons">
+            <button id="confirmPaymentButton" class="button-style">Pagar Agora</button>
+            <button id="cancelPaymentButton" class="button-style secondary">Cancelar</button>
+          </div>
+        </div>
+        <div id="cartSummaryAndActions">
+          <div id="cartSummary">
+            <h4 id="cartTotal">Total: R$ 0,00</h4>
+          </div>
+          <div id="cartInitialActions">
+            <button id="initiateCheckoutButton" class="button-style">Finalizar Compra</button>
+            <button onclick="emptyCart()" class="button-style secondary">Esvaziar Carrinho</button>
+            <button onclick="showSection('Home')" class="button-style secondary">Continuar Comprando</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="loginView" style="display:none;">
+      <div class="login-container" role="main" aria-labelledby="login-title-main">
+        <h2 id="login-title-main">Login U-Player</h2>
+        <form id="loginForm">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="exemplo@dominio.com" required />
+          <label for="loginPassword">Senha</label>
+          <input type="password" id="loginPassword" placeholder="Sua senha" required />
+          <button type="submit" aria-label="Entrar">Entrar</button>
+        </form>
+        <div id="loginError" class="error-message" role="alert" aria-live="assertive" style="display:none;"></div>
+        <p class="register-link">Não tem uma conta? <a href="#" onclick="showSection('registerView')">Registre-se aqui</a></p>
+      </div>
+    </section>
+
+    <section id="registerView" style="display:none;">
+      <div class="register-container" role="main" aria-labelledby="register-title-main">
+        <h2 id="register-title-main">Registrar Nova Conta</h2>
+        <form id="registerForm">
+          <label for="registerName">Nome Completo:</label>
+          <input type="text" id="registerName" required />
+          <label for="registerEmail">Email:</label>
+          <input type="email" id="registerEmail" required />
+          <label for="registerPassword">Senha:</label>
+          <input type="password" id="registerPassword" required />
+          <label for="registerConfirmPassword">Confirmar Senha:</label>
+          <input type="password" id="registerConfirmPassword" required />
+          <label for="registerAddress">Endereço:</label>
+          <textarea id="registerAddress"></textarea>
+          <label for="registerPhone">Telefone:</label>
+          <input type="tel" id="registerPhone" />
+          <button type="submit">Registrar</button>
+        </form>
+        <div id="registerError" class="error-message" style="display:none;"></div>
+        <p class="login-link-alt">Já tem uma conta? <a href="#" onclick="showSection('loginView')">Faça login</a></p>
+      </div>
+    </section>
+
+<section id="productDetailView" style="display:none;">
+  <div class="product-detail-container">
+    <button class="back-button" onclick="goBackToPreviousSection()">← Voltar</button>
+    <div class="product-detail-content"> <div class="product-detail-image-container">
+        <img id="detailProductImage" src="https://via.placeholder.com/400" alt="Imagem do Produto">
+      </div>
+      <div class="product-detail-info">
+        <h2 id="detailProductName">Nome do Produto</h2>
+        <p class="detail-price" id="detailProductPrice">R$ 0,00</p>
+        <div class="size-selection">
+          <h4>Escolha o Tamanho:</h4>
+          <div id="detailSizeOptionsContainer"></div>
+          <p class="detail-stock" id="detailProductStock">Selecione um tamanho para ver o estoque.</p>
+        </div>
+        <div class="detail-description">
+          <h4>Descrição:</h4>
+          <p id="detailProductDescription">Descrição detalhada...</p>
+        </div>
+        <button id="detailAddToCartButton" class="add-to-cart-button" disabled>Adicionar ao Carrinho</button>
+        </div> </div> <div id="playerMomentContainer" style="display: none;"> <h4>Momentos Marcantes:</h4> <div class="moments-wrapper"> <div class="moment-item" id="momentItem1" style="display: none;"> <img id="playerMomentImage1" src="" alt="Momento marcante 1">
+                <p id="playerMomentDescription1"></p>
+            </div>
+
+            <div class="moment-item" id="momentItem2" style="display: none;"> <img id="playerMomentImage2" src="" alt="Momento marcante 2">
+                <p id="playerMomentDescription2"></p>
+            </div>
+
+        </div>
+    </div>
+    </div> </section>
+  </main>
+
+  <section id="adminView" style="display:none;">
+    <header role="banner" class="admin-header-internal">Admin Dashboard - U-Player Store</header>
+    <div class="admin-container">
+      <nav id="adminNav" class="admin-nav-internal">
+        <a href="#" onclick="showAdminSection('adminProductManagement')">Gerenciar Produtos</a>
+        <a href="#" onclick="showAdminSection('adminUserManagementView')">Gerenciar Usuários</a>
+        <a href="#" onclick="logoutUser()">Logout</a>
+      </nav>
+      <main id="adminMainContent" role="main" class="admin-main-content-internal">
+        <div id="adminProductManagement" class="admin-section-content">
+          <h2 id="admin-product-title">Gerenciamento de Produtos</h2>
+          <form id="productForm" aria-label="Formulário para adicionar ou editar produto">
+            <input type="hidden" id="productId" />
+            <label for="productName">Nome do Produto</label>
+            <input id="productName" type="text" placeholder="Nome da Jersey" required />
+            <label for="productPrice">Preço (R$)</label>
+            <input id="productPrice" type="number" placeholder="Preço" min="0" step="0.01" required />
+            <label for="productDescription">Descrição</label>
+            <textarea id="productDescription" placeholder="Descrição detalhada da jersey" required></textarea>
+            <div class="form-group-stock-sizes">
+              <label>Quantidade em Estoque por Tamanho:</label>
+              <div><label for="productStockP">P:</label><input id="productStockP" type="number" placeholder="Est. P" min="0" value="0" required /></div>
+              <div><label for="productStockM">M:</label><input id="productStockM" type="number" placeholder="Est. M" min="0" value="0" required /></div>
+              <div><label for="productStockG">G:</label><input id="productStockG" type="number" placeholder="Est. G" min="0" value="0" required /></div>
+              <div><label for="productStockG">GG:</label><input id="productStockG" type="number" placeholder="Est. GG" min="0" value="0" required /></div>
+
+            </div>
+            <label for="productImage">URL da Imagem</label>
+            <input id="productImage" type="url" placeholder="https://i.imgur.com/imagem.png" required />
+            <button type="submit" id="saveProductButton">Salvar Produto</button>
+            <button type="button" id="cancelEditButton" style="display:none;" onclick="cancelEditProduct()">Cancelar Edição</button>
+          </form>
+          <section class="product-list-admin" id="adminProductListContainer" aria-label="Lista de produtos cadastrados">
+            <h3>Produtos Cadastrados</h3>
+            <div id="adminProductList"></div>
+          </section>
+        </div>
+        
+        <div id="adminUserManagementView" class="admin-section-content" style="display:none;">
+          <h2>Gerenciamento de Usuários</h2>
+          <div class="user-management-subsection">
+            <h3>Clientes</h3>
+            <div id="adminCustomerList"></div>
+          </div>
+          <div class="user-management-subsection">
+            <h3>Administradores</h3>
+            <div id="adminAdminUserList"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <footer id="mainFooter">
+    <p>&copy; 2025 U-Player Store</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
