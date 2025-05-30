@@ -62,9 +62,9 @@ Para simular as requisições a um backend, utilizamos o **Beeceptor** como um m
 O desenvolvimento do projeto é baseado nas tecnologias web padrão:
 - **HTML5:** Para a estrutura e semântica do conteúdo.
 - **CSS3:** Para a estilização e responsividade do layout.
-- **JavaScript:** Responsável pela lógica de navegação SPA, manipulação do DOM, gerenciamento de estado (via `localStorage`), lógica de carrinho, autenticação e simulação de interações com uma API externa através do **Beeceptor**. O **Beeceptor** é utilizado para mockar respostas de API, permitindo o desenvolvimento do frontend independentemente de um backend real.
+- **JavaScript:** Responsável pela lógica de navegação SPA, manipulação do DOM, gerenciamento de estado (via `localStorage`), lógica de carrinho, autenticação e simulação de interações através do **Beeceptor**.
 - **Navegação SPA:** A transição entre as seções é gerenciada por funções JavaScript que exibem ou ocultam elementos HTML, proporcionando uma experiência de usuário mais dinâmica.
-- **Layout Responsivo:** O CSS foi desenvolvido com media queries para garantir que o site se adapte e seja totalmente funcional em diferentes dispositivos e tamanhos de tela.
+- **Layout Responsivo:** O CSS foi desenvolvido com media queries para garantir que o site e seja funcional em diferentes tamanhos de tela.
 
 ---
 
