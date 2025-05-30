@@ -45,6 +45,10 @@ O site é estruturado para apresentar:
 
 ![Diagrama de Navegação U-Player](https://github.com/user-attachments/assets/d49e94b2-2b9a-4adf-bbe2-a1ad04706461)
 
+### Link para o Figma:
+
+https://www.figma.com/design/fDdvSGY9pd2x6SHDP2jHrW/Untitled?node-id=0-1&m=dev&t=CzRNXHTVi0VLTHho-1
+
 ### Persistência de Dados (Simulada):
 Para simular as requisições a um backend, utilizamos o **Beeceptor** como um mock API. As informações planejadas para serem salvas (e que atualmente são manipuladas via `localStorage` no frontend, com a estrutura para futura integração com o Beeceptor) incluem:
 - Dados dos produtos (nome, preço, descrição, quantidade em estoque por tamanho, URL da imagem).
