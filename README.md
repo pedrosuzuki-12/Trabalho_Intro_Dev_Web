@@ -37,7 +37,7 @@ O site é estruturado para apresentar:
 - **Página Inicial (Home):** Exibindo produtos em lançamento e destaques.
 - **Seção "Jerseys":** Catálogo completo de camisetas de times e jogadores.
 - **Seção "Carrinho":** Para visualização e gerenciamento dos itens selecionados para compra.
-- **Sistema de Autenticação:** Permite login de usuários (clientes) e administradores, com credenciais de exemplo (`admin@admin.com` / `admin` || `cliente@cliente.com` / `client`.
+- **Sistema de Autenticação:** Permite login de usuários (clientes) e administradores, com credenciais de exemplo (`admin@admin.com` / `admin` || `cliente@cliente.com` / `client`).
 - **Painel Administrativo:** Acesso exclusivo para administradores com funcionalidades de CRUD de produtos e gerenciamento de usuários.
 - **Navegação SPA (Single Page Application):** Utiliza `JavaScript` para manipulação do DOM, proporcionando uma transição suave entre as seções sem recarregamento completo da página.
 
