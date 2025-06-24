@@ -1,0 +1,51 @@
+# Ignorar arquivos de dependências do Node.js
+node_modules/
+**/node_modules/
+
+# Logs e arquivos de debug
+npm-debug.log*
+.yarn-integrity
+.yarn-timestamp
+.pnp.js
+.pnp.cjs
+.eslintcache
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Builds e outputs
+build/
+dist/
+out/
+
+# Arquivos de sistema operacional
+.DS_Store # macOS
+Thumbs.db # Windows
+.vscode/ # Pasta de configurações do VS Code (opcional, mas geralmente é bom ignorar)
+
+# Arquivos de cache e temporários de editores/IDE
+*.sublime-project
+*.sublime-workspace
+.idea/
+*.swp
+*.bak
+*~.nib
+*.xcworkspace
+.lock-wscript
+.wafpickle-*
+.waf*
+.project
+.settings
+.buildpath
+
+# Para MongoDB (se houver arquivos de dados na mesma pasta do projeto, o que não é recomendado para dev)
+/data/db/
+*.log
+
+# Arquivos gerados pelo npm/yarn
+package-lock.json # pode ser adicionado se quiser gerenciar dependências de forma mais solta, mas geralmente é rastreado
+yarn.lock         # mesma consideração do package-lock.json
