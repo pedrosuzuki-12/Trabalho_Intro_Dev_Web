@@ -51,14 +51,34 @@ https://www.figma.com/design/fDdvSGY9pd2x6SHDP2jHrW/Untitled?node-id=0-1&m=dev&t
 
 ---
 
-## 3. Comentários sobre o Código
+### 3. Comentários sobre o Código
 
-O desenvolvimento do projeto é baseado nas tecnologias web padrão:
-- **HTML5:** Para a estrutura e semântica do conteúdo.
-- **CSS3:** Para a estilização e responsividade do layout.
-- **JavaScript:** Responsável pela lógica de navegação SPA, manipulação do DOM, gerenciamento de estado (via `localStorage`), lógica de carrinho, autenticação e simulação de interações através do **Beeceptor**.
-- **Navegação SPA:** A transição entre as seções é gerenciada por funções JavaScript que exibem ou ocultam elementos HTML, proporcionando uma experiência de usuário mais dinâmica.
-- **Layout Responsivo:** O CSS foi desenvolvido com media queries para garantir que o site e seja funcional em diferentes tamanhos de tela.
+O desenvolvimento do projeto evoluiu para uma aplicação full-stack completa, utilizando tecnologias modernas para o frontend, backend e banco de dados. A arquitetura foi dividida em três camadas principais:
+
+#### **Frontend (Cliente Web)**
+O frontend foi construído como uma **Single-Page Application (SPA)** para proporcionar uma experiência de usuário fluida e dinâmica.
+
+- **React:** É a biblioteca principal utilizada para construir a interface do usuário de forma componentizada, gerenciando o estado e o ciclo de vida de cada parte da aplicação.
+- **React Router DOM:** Responsável por todo o roteamento do lado do cliente, permitindo a navegação entre as diferentes páginas (`/`, `/jerseys`, `/cart`, `/admin`, etc.) sem a necessidade de recarregar a página.
+- **React Context API:** Utilizada para o gerenciamento de estado global. Foram criados contextos específicos para lidar com diferentes responsabilidades:
+    - `ProductContext`: Gerencia o estado dos produtos (listagem, adição, etc.).
+    - `AuthContext`: Controla a autenticação, o estado do usuário logado (cliente ou admin) e as funções de gerenciamento de usuários.
+    - `CartContext`: Gerencia os itens no carrinho de compras e o processo de finalização do pedido.
+- **Comunicação com API:** Toda a interação com dados (antes simulada com `localStorage` e Beeceptor) agora é realizada através de chamadas assíncronas (`fetch`) para a API RESTful do backend.
+
+#### **Backend (Servidor)**
+O servidor foi desenvolvido para centralizar toda a lógica de negócios e o acesso aos dados.
+
+- **Node.js:** Utilizado como o ambiente de execução para o código do lado do servidor.
+- **Express.js:** É o framework que estrutura o backend, simplificando a criação de rotas, o gerenciamento de requisições HTTP (GET, POST, PUT, DELETE) e a configuração de middlewares.
+- **API RESTful:** O servidor expõe uma API no padrão REST, com endpoints claros para cada funcionalidade: gerenciamento de produtos, autenticação de usuários, gerenciamento de usuários pelo admin e processamento de compras.
+- **CORS (Cross-Origin Resource Sharing):** Middleware utilizado para permitir que o frontend (rodando em `localhost:3000`) se comunique de forma segura com o backend (rodando em `localhost:5000`).
+
+#### **Banco de Dados**
+Para a persistência dos dados, foi escolhido um banco de dados NoSQL, como especificado nos requisitos.
+
+- **MongoDB:** É o sistema de banco de dados NoSQL utilizado para armazenar todas as informações da aplicação, como dados de usuários (clientes e administradores) e o catálogo de produtos.
+- **Mongoose:** Biblioteca (ODM - Object Data Modeling) que facilita a interação entre o servidor Node.js e o MongoDB. Foi utilizada para definir os `Schemas` (a estrutura dos dados) e para executar todas as operações no banco de dados, como criar, ler, atualizar e deletar documentos.
 
 ---
 
