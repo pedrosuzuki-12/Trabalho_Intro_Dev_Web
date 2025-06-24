@@ -79,110 +79,133 @@ Realizamos uma simulação de compra registrada no Beeceptor
 ## 6. Procedimentos para Executar
  
 
-Milestone3 em um ambiente de desenvolvimento local. 
-6.1. Pré-requisitos 
-Antes de iniciar, certifique-se de que os seguintes softwares estão instalados em seu sistema: 
-● Node.js: Versão 14.0 ou superior. O Node.js inclui o gerenciador de pacotes npm. Você 
-pode baixá-lo em nodejs.org. 
-● MongoDB: O banco de dados NoSQL utilizado no projeto. É necessário que o serviço do 
-MongoDB esteja em execução na máquina local. Você pode baixá-lo em 
-mongodb.com/try/download/community. 
-● Git: Para clonar o repositório do projeto. Você pode baixá-lo em git-scm.com. 
-● (Opcional) Postman: Recomendado para testar os endpoints da API, se desejado. Você 
-pode baixá-lo em postman.com/downloads/. 
-6.2. Instalação 
-Siga os passos abaixo para baixar o código-fonte e instalar todas as dependências do 
-frontend e do backend. 
-1. Clonar o Repositório: 
-Abra um terminal e clone o repositório do projeto a partir do GitHub: 
-Bash 
-git clone <URL_DO_SEU_REPOSITORIO_GITHUB> 
-2. Acessar a Pasta do Projeto: 
-Bash 
-cd <NOME_DA_PASTA_DO_PROJETO> 
-3. Instalar Dependências do Backend: 
-Navegue até a pasta do servidor e instale suas dependências. 
-Bash 
-cd server 
-npm install 
-4. Instalar Dependências do Frontend: 
-Volte para a pasta raiz e navegue até a pasta do cliente para instalar suas dependências. 
-Bash 
-npm install 
-cd ../client  # Ou o nome que você deu para a pasta do frontend 
-Ao final deste processo, todas as dependências necessárias para a aplicação estarão 
-instaladas. 
-6.3. Configuração Inicial do Banco de Dados 
-O banco de dados inicia vazio. Os passos a seguir são necessários para cadastrar o 
-administrador principal e os produtos, permitindo o uso completo da aplicação. 
-1. Inicie o Servidor Backend: 
-Em um terminal, dentro da pasta server, execute: 
-Bash 
-node index.js 
-Mantenha este terminal aberto. Você deverá ver a mensagem "Servidor rodando na porta 
-5000" e "Conectado ao MongoDB com sucesso!". 
-2. Cadastre o Usuário Administrador: 
-Use o Postman (ou outra ferramenta de API) para fazer uma requisição POST para criar o 
-usuário admin: 
-○ Método: POST 
-○ URL: http://localhost:5000/api/register 
-○ Body (raw, JSON): 
-JSON 
-{ 
-} 
-"name": "Administrador", 
-"email": "admin@admin.com", 
-"password": "admin" 
-Na resposta, copie o valor do campo _id do usuário recém-criado. 
-3. Promova o Usuário a Administrador: 
-Faça uma requisição PUT para alterar o tipo do usuário: 
-○ Método: PUT 
-○ URL: http://localhost:5000/api/users/<ID_DO_ADMIN_COPIADO_ACIMA> 
-○ Body (raw, JSON): 
-JSON 
-{ 
-"userType": "admin" 
-} 
-4. Cadastre os Produtos Iniciais: 
-Para cada produto que deseja adicionar, faça uma requisição POST para 
-http://localhost:5000/api/products. Abaixo está um exemplo para o primeiro produto: 
-○ Método: POST 
-○ URL: http://localhost:5000/api/products 
-○ Body (raw, JSON): 
-JSON 
-{ 
-"name": "Jersey Bulls Michael Jordan (Hardwood Classics)", 
-"price": 799.00, 
-"description": "Um clássico atemporal: jersey Michael Jordan do Chicago Bulls (Authentic 
-Hardwood Classics). Indispensável para qualquer fã, representa a era de ouro da NBA.", 
-"image": "images/oCRUxMA.png", 
-"stockBySize": { "P": 12, "M": 20, "G": 10, "GG": 12 }, 
-"isFeatured": true, 
-"playerMoments": [ 
-{ "image": "images/jordan.jpg", "text": "Air jordan enterrando com a língua de fora" }, 
-{ "image": "images/jordan2.jpg", "text": "Jordan cobrando lance livre de olhos 
-fechados!" } 
-] 
-} 
-Repita este passo para os outros produtos desejados. 
-6.4. Executando a Aplicação 
-Com as dependências instaladas e o banco de dados populado, a aplicação pode ser 
-iniciada. Você precisará de dois terminais abertos simultaneamente. 
-1. Terminal 1 - Iniciar o Backend: 
-Se o servidor não estiver rodando, navegue até a pasta server e execute: 
-Bash 
-cd server 
-node index.js 
-Deixe este terminal aberto. 
-2. Terminal 2 - Iniciar o Frontend: 
-Abra um novo terminal, navegue até a pasta client (ou frontend) e execute: 
-Bash 
-cd client 
-npm start 
-3. Acessar a Aplicação: 
-Uma nova aba deverá abrir automaticamente no seu navegador. Caso não abra, acesse 
-manualmente o seguinte endereço: 
-http://localhost:3000 
+Para executar o projeto U-Player Online Store em um ambiente de desenvolvimento local, siga os passos abaixo.
+
+6.1. Pré-requisitos
+Certifique-se de que os seguintes softwares estão instalados em seu sistema:
+
+Node.js: Versão 14.0 ou superior. Inclui o gerenciador de pacotes npm. Baixe em nodejs.org.
+MongoDB: Banco de dados NoSQL utilizado no backend. É necessário que o serviço do MongoDB esteja em execução na máquina local. Baixe em mongodb.com/try/download/community.
+Git: Para clonar o repositório do projeto. Baixe em git-scm.com.
+(Opcional) Postman: Recomendado para testar os endpoints da API. Baixe em postman.com/downloads/.
+6.2. Instalação
+Siga os passos abaixo para clonar o código-fonte e instalar todas as dependências do frontend e do backend.
+
+Clonar o Repositório:
+Abra um terminal (como o Terminal do VS Code) e clone o repositório do projeto:
+
+Bash
+
+git clone <URL_DO_SEU_REPOSITORIO_GITHUB>
+# Exemplo: git clone https://github.com/pedrosuzuki-12/Trabalho_Intro_Dev_Web.git
+Acessar a Pasta Raiz do Projeto:
+Navegue até a pasta que foi clonada, que é a raiz do seu repositório:
+
+Bash
+
+cd Trabalho_Intro_Dev_Web
+Instalar Dependências do Backend:
+Navegue para a pasta do servidor e instale suas dependências:
+
+Bash
+
+cd U-Player/server
+npm install
+Instalar Dependências do Frontend:
+Volte para a pasta raiz do projeto (Trabalho_Intro_Dev_Web), navegue até a pasta do cliente (client dentro de U-Player) e instale suas dependências:
+
+Bash
+
+cd ../../U-Player/client # Volta duas pastas e entra em U-Player/client
+npm install
+Ao final deste processo, todas as dependências necessárias para a aplicação estarão instaladas.
+
+6.3. Configuração Inicial do Banco de Dados
+O banco de dados inicia vazio. Os passos a seguir são necessários para cadastrar o administrador principal e os produtos, permitindo o uso completo da aplicação.
+
+Inicie o Serviço MongoDB:
+Certifique-se de que o serviço do MongoDB esteja em execução em sua máquina local.
+
+Inicie o Servidor Backend:
+Em um terminal, navegue até a pasta do servidor (U-Player/server) e execute:
+
+Bash
+
+cd U-Player/server
+node index.js
+Mantenha este terminal aberto. Você deverá ver a mensagem "Servidor rodando na porta 5000" e "Conectado ao MongoDB com sucesso!".
+
+Cadastre o Usuário Administrador:
+Use o Postman (ou outra ferramenta de API) para fazer uma requisição POST para criar o usuário admin:
+
+Método: POST
+URL: http://localhost:5000/api/register
+Body (raw, JSON):
+JSON
+
+{
+  "name": "Administrador",
+  "email": "admin@admin.com",
+  "password": "admin"
+}
+Na resposta, copie o valor do campo _id do usuário recém-criado.
+
+Promova o Usuário a Administrador:
+Faça uma requisição PUT para alterar o tipo do usuário (substitua <ID_DO_ADMIN_COPIADO_ACIMA> pelo ID que você copiou):
+
+Método: PUT
+URL: http://localhost:5000/api/users/<ID_DO_ADMIN_COPIADO_ACIMA>
+Body (raw, JSON):
+JSON
+
+{
+  "userType": "admin"
+}
+Cadastre os Produtos Iniciais:
+Para cada produto que deseja adicionar, faça uma requisição POST para http://localhost:5000/api/products. Abaixo está um exemplo para o primeiro produto:
+
+Método: POST
+URL: http://localhost:5000/api/products
+Body (raw, JSON):
+JSON
+
+{
+  "name": "Jersey Bulls Michael Jordan (Hardwood Classics)",
+  "price": 799.00,
+  "description": "Um clássico atemporal: jersey Michael Jordan do Chicago Bulls (Authentic Hardwood Classics). Indispensável para qualquer fã, representa a era de ouro da NBA.",
+  "image": "images/oCRUxMA.png",
+  "stockBySize": { "P": 12, "M": 20, "G": 10, "GG": 12 },
+  "isFeatured": true,
+  "playerMoments": [
+    { "image": "images/jordan.jpg", "text": "Air jordan enterrando com a língua de fora" },
+    { "image": "images/jordan2.jpg", "text": "Jordan cobrando lance livre de olhos fechados!" }
+  ]
+}
+Repita este passo para os outros produtos desejados, usando os dados apropriados para cada um.
+
+6.4. Executando a Aplicação
+Com as dependências instaladas e o banco de dados populado, a aplicação pode ser iniciada. Você precisará de dois terminais abertos simultaneamente.
+
+Terminal 1 - Iniciar o Backend:
+Navegue até a pasta do servidor (U-Player/server) e execute:
+
+Bash
+
+cd U-Player/server
+node index.js
+Deixe este terminal aberto.
+
+Terminal 2 - Iniciar o Frontend:
+Abra um novo terminal, navegue até a pasta do cliente (U-Player/client) e execute:
+
+Bash
+
+cd U-Player/client
+npm start
+Acessar a Aplicação:
+Uma nova aba deverá abrir automaticamente no seu navegador. Caso não abra, acesse manualmente o seguinte endereço:
+http://localhost:3000
+
 A aplicação estará pronta para ser utilizada.
 
 ## 7. Problemas Encontrados
