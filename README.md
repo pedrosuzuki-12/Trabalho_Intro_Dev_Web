@@ -339,3 +339,14 @@ Embora o projeto já conte com funcionalidades essenciais, há oportunidades par
 Acreditamos que este projeto atende aos requisitos propostos e serve como um excelente ponto de partida para um sistema de e-commerce mais complexo.
 
 
+[postman-register-client]: Screenshots/imagem5.png
+[postman-register-admin]: Screenshots/imagem6.png
+[postman-promote-admin]: Screenshots/imagem8.png
+[postman-list-users]: Screenshots/imagem9.png
+[postman-error-admin-change]: Screenshots/imagem7.png
+[postman-create-product]: Screenshots/imagem1.png
+[postman-list-products]: Screenshots/imagem11.png
+[postman-update-product]: Screenshots/imagem3.png
+[postman-delete-product]: Screenshots/imagem4.png
+[postman-purchase]: Screenshots/imagem12.png
+
