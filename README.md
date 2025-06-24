@@ -77,15 +77,113 @@ Realizamos uma simulação de compra registrada no Beeceptor
 ---
 
 ## 6. Procedimentos para Executar
+ 
 
-Para executar o projeto localmente, siga os passos abaixo:
-
-1.  **Dowload do ZIP**
-
-2.  **Abrir no Navegador:**
-     Abra o `Trabalho_Home.html` no seu navegador através do endereço fornecido pelo servidor (geralmente `http://127.0.0.1:5500/Trabalho_Home.html` ou similar).
-
----
+Milestone3 em um ambiente de desenvolvimento local. 
+6.1. Pré-requisitos 
+Antes de iniciar, certifique-se de que os seguintes softwares estão instalados em seu sistema: 
+● Node.js: Versão 14.0 ou superior. O Node.js inclui o gerenciador de pacotes npm. Você 
+pode baixá-lo em nodejs.org. 
+● MongoDB: O banco de dados NoSQL utilizado no projeto. É necessário que o serviço do 
+MongoDB esteja em execução na máquina local. Você pode baixá-lo em 
+mongodb.com/try/download/community. 
+● Git: Para clonar o repositório do projeto. Você pode baixá-lo em git-scm.com. 
+● (Opcional) Postman: Recomendado para testar os endpoints da API, se desejado. Você 
+pode baixá-lo em postman.com/downloads/. 
+6.2. Instalação 
+Siga os passos abaixo para baixar o código-fonte e instalar todas as dependências do 
+frontend e do backend. 
+1. Clonar o Repositório: 
+Abra um terminal e clone o repositório do projeto a partir do GitHub: 
+Bash 
+git clone <URL_DO_SEU_REPOSITORIO_GITHUB> 
+2. Acessar a Pasta do Projeto: 
+Bash 
+cd <NOME_DA_PASTA_DO_PROJETO> 
+3. Instalar Dependências do Backend: 
+Navegue até a pasta do servidor e instale suas dependências. 
+Bash 
+cd server 
+npm install 
+4. Instalar Dependências do Frontend: 
+Volte para a pasta raiz e navegue até a pasta do cliente para instalar suas dependências. 
+Bash 
+npm install 
+cd ../client  # Ou o nome que você deu para a pasta do frontend 
+Ao final deste processo, todas as dependências necessárias para a aplicação estarão 
+instaladas. 
+6.3. Configuração Inicial do Banco de Dados 
+O banco de dados inicia vazio. Os passos a seguir são necessários para cadastrar o 
+administrador principal e os produtos, permitindo o uso completo da aplicação. 
+1. Inicie o Servidor Backend: 
+Em um terminal, dentro da pasta server, execute: 
+Bash 
+node index.js 
+Mantenha este terminal aberto. Você deverá ver a mensagem "Servidor rodando na porta 
+5000" e "Conectado ao MongoDB com sucesso!". 
+2. Cadastre o Usuário Administrador: 
+Use o Postman (ou outra ferramenta de API) para fazer uma requisição POST para criar o 
+usuário admin: 
+○ Método: POST 
+○ URL: http://localhost:5000/api/register 
+○ Body (raw, JSON): 
+JSON 
+{ 
+} 
+"name": "Administrador", 
+"email": "admin@admin.com", 
+"password": "admin" 
+Na resposta, copie o valor do campo _id do usuário recém-criado. 
+3. Promova o Usuário a Administrador: 
+Faça uma requisição PUT para alterar o tipo do usuário: 
+○ Método: PUT 
+○ URL: http://localhost:5000/api/users/<ID_DO_ADMIN_COPIADO_ACIMA> 
+○ Body (raw, JSON): 
+JSON 
+{ 
+"userType": "admin" 
+} 
+4. Cadastre os Produtos Iniciais: 
+Para cada produto que deseja adicionar, faça uma requisição POST para 
+http://localhost:5000/api/products. Abaixo está um exemplo para o primeiro produto: 
+○ Método: POST 
+○ URL: http://localhost:5000/api/products 
+○ Body (raw, JSON): 
+JSON 
+{ 
+"name": "Jersey Bulls Michael Jordan (Hardwood Classics)", 
+"price": 799.00, 
+"description": "Um clássico atemporal: jersey Michael Jordan do Chicago Bulls (Authentic 
+Hardwood Classics). Indispensável para qualquer fã, representa a era de ouro da NBA.", 
+"image": "images/oCRUxMA.png", 
+"stockBySize": { "P": 12, "M": 20, "G": 10, "GG": 12 }, 
+"isFeatured": true, 
+"playerMoments": [ 
+{ "image": "images/jordan.jpg", "text": "Air jordan enterrando com a língua de fora" }, 
+{ "image": "images/jordan2.jpg", "text": "Jordan cobrando lance livre de olhos 
+fechados!" } 
+] 
+} 
+Repita este passo para os outros produtos desejados. 
+6.4. Executando a Aplicação 
+Com as dependências instaladas e o banco de dados populado, a aplicação pode ser 
+iniciada. Você precisará de dois terminais abertos simultaneamente. 
+1. Terminal 1 - Iniciar o Backend: 
+Se o servidor não estiver rodando, navegue até a pasta server e execute: 
+Bash 
+cd server 
+node index.js 
+Deixe este terminal aberto. 
+2. Terminal 2 - Iniciar o Frontend: 
+Abra um novo terminal, navegue até a pasta client (ou frontend) e execute: 
+Bash 
+cd client 
+npm start 
+3. Acessar a Aplicação: 
+Uma nova aba deverá abrir automaticamente no seu navegador. Caso não abra, acesse 
+manualmente o seguinte endereço: 
+http://localhost:3000 
+A aplicação estará pronta para ser utilizada.
 
 ## 7. Problemas Encontrados
 
