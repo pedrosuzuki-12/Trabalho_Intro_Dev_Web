@@ -204,7 +204,7 @@ Siga os passos abaixo para clonar o código-fonte e instalar todas as dependênc
     Navegue para a pasta do servidor (localizada dentro de `U-Player`) e instale suas dependências:
 
     ```bash
-    cd U-Player/server
+    cd Milestone3/server
     npm install
     ```
    
@@ -213,7 +213,7 @@ Siga os passos abaixo para clonar o código-fonte e instalar todas as dependênc
     Volte para a pasta raiz do projeto (`Trabalho_Intro_Dev_Web`), navegue até a pasta do cliente (`client` dentro de `U-Player`) e instale suas dependências:
 
     ```bash
-    cd ../../U-Player/client # Volta duas pastas para a raiz do repositório e entra em U-Player/client
+    cd ../../Milestone3/front # Volta duas pastas para a raiz do repositório e entra em Milestone3/client
     npm install
     ```
    
@@ -226,10 +226,10 @@ O banco de dados inicia vazio. Os passos a seguir são necessários para cadastr
     Certifique-se de que o serviço do MongoDB esteja em execução em sua máquina local.
 
 2.  **Inicie o Servidor Backend:**
-    Em um terminal, navegue até a pasta do servidor (`U-Player/server`) e execute:
+    Em um terminal, navegue até a pasta do servidor (`Milestone3/server`) e execute:
 
     ```bash
-    cd U-Player/server
+    cd Milestone3/server
     node index.js
     ```
    
@@ -240,7 +240,7 @@ O banco de dados inicia vazio. Os passos a seguir são necessários para cadastr
 
     * **Método:** `POST`
     * **URL:** `http://localhost:5000/api/register`
-    * **Body (raw, JSON):**
+    * **Body (raw, JSON):**+
         ```json
         {
           "name": "Administrador",
@@ -291,20 +291,20 @@ O banco de dados inicia vazio. Os passos a seguir são necessários para cadastr
 Com as dependências instaladas e o banco de dados populado, a aplicação pode ser iniciada. Você precisará de dois terminais abertos simultaneamente.
 
 1.  **Terminal 1 - Iniciar o Backend:**
-    Navegue até a pasta do servidor (`U-Player/server`) e execute:
+    Navegue até a pasta do servidor (`Milestone3/server`) e execute:
 
     ```bash
-    cd U-Player/server
+    cd Milestone3/server
     node index.js
     ```
    
     *Deixe este terminal aberto.*
 
 2.  **Terminal 2 - Iniciar o Frontend:**
-    Abra um novo terminal, navegue até a pasta do cliente (`U-Player/client`) e execute:
+    Abra um novo terminal, navegue até a pasta do cliente (`Milestone3r/client`) e execute:
 
     ```bash
-    cd U-Player/client
+    cd Milestone3/client
     npm start
     ```
    
