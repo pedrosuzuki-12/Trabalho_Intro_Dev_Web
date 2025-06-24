@@ -230,7 +230,7 @@ Siga os passos abaixo para clonar o código-fonte e instalar todas as dependênc
    
 
 4.  **Instalar Dependências do Frontend:**
-    Volte para a pasta raiz do projeto (`Trabalho_Intro_Dev_Web`), navegue até a pasta do cliente (`client` dentro de `U-Player`) e instale suas dependências:
+    Volte para a pasta raiz do projeto (`Trabalho_Intro_Dev_Web`), navegue até a pasta do cliente (`client` dentro de `Milestone3`) e instale suas dependências:
 
     ```bash
     cd ../../Milestone3/front # Volta duas pastas para a raiz do repositório e entra em Milestone3/client
@@ -321,10 +321,10 @@ Com as dependências instaladas e o banco de dados populado, a aplicação pode 
     *Deixe este terminal aberto.*
 
 2.  **Terminal 2 - Iniciar o Frontend:**
-    Abra um novo terminal, navegue até a pasta do cliente (`Milestone3r/client`) e execute:
+    Abra um novo terminal, navegue até a pasta do cliente (`Milestone3r/front`) e execute:
 
     ```bash
-    cd Milestone3/client
+    cd Milestone3/front
     npm start
     ```
    
