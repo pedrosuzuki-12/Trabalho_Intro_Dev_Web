@@ -320,7 +320,6 @@ Com as dependências instaladas e o banco de dados populado, a aplicação pode 
 Durante a fase de desenvolvimento e integração, identificamos os seguintes pontos:
 
 * **Validação de Administrador Principal:** Foi implementada uma regra no backend que impede a alteração do tipo de usuário do administrador principal. Tentativas de modificar este usuário resultam em um erro `403 Forbidden` com a mensagem "O administrador principal não pode ser alterado.". Esta é uma funcionalidade intencional para garantir a segurança e integridade do sistema.
-* **Dependência de `localStorage` para Dados Iniciais:** Atualmente, a persistência inicial de alguns dados no frontend (como produtos e usuários) pode depender do `localStorage` do navegador. Isso significa que, em cenários de desenvolvimento ou após certas alterações no código-fonte dos dados, pode ser necessário limpar o `localStorage` manualmente para que as novas informações sejam carregadas corretamente.
 * **Gestão de Estoque e Vendas:** A simulação de compra (`/api/purchase`) foi testada com sucesso via API, porém, a implementação completa da atualização do estoque (`stockBySize`) e do contador de vendas (`sold`) no backend após a compra precisa ser verificada em cenários mais complexos e integrada ao fluxo do frontend.
 * **Nenhum problema crítico impedindo a funcionalidade básica do frontend foi encontrado até o momento, dado o escopo atual do projeto.**
 
@@ -330,33 +329,13 @@ Durante a fase de desenvolvimento e integração, identificamos os seguintes pon
 
 Este projeto **U-Player Online Store** representa uma base sólida para uma aplicação de e-commerce de produtos de basquete, com um backend funcional capaz de gerenciar usuários e produtos, além de simular compras. O uso do **Node.js** com **Express** no backend e o **MongoDB** como banco de dados NoSQL demonstram uma arquitetura moderna e escalável.
 
-A aplicação frontend, construída com **HTML5**, **CSS3** e **JavaScript**, oferece uma experiência de usuário SPA (Single Page Application) com navegação fluida e design responsivo. Os testes de API com **Postman** foram cruciais para validar a robustez das operações de backend, incluindo a gestão de usuários (com casos de sucesso e regras de segurança para o administrador principal) e produtos, além da simulação de processos de compra.
+A aplicação frontend, construída com **React** oferece uma experiência de usuário SPA (Single Page Application) com navegação fluida e design responsivo. Os testes de API com **Postman** foram cruciais para validar a robustez das operações de backend, incluindo a gestão de usuários (com casos de sucesso e regras de segurança para o administrador principal) e produtos, além da simulação de processos de compra.
 
 Embora o projeto já conte com funcionalidades essenciais, há oportunidades para futuras melhorias, como:
-* Integração mais robusta do gerenciamento de estoque e vendas com o frontend.
 * Implementação de autenticação baseada em tokens (JWT) para maior segurança nas requisições da API.
 * Expansão das funcionalidades do painel administrativo no frontend.
 * Aprimoramento da interface de usuário e experiência de compra.
 
 Acreditamos que este projeto atende aos requisitos propostos e serve como um excelente ponto de partida para um sistema de e-commerce mais complexo.
 
-### Estrutura do Projeto:
 
-| Arquivo/Diretório      | Descrição                                                                         |
-| :--------------------- | :-------------------------------------------------------------------------------- |
-| `/ (root)`             | Diretório raiz do projeto.                                                        |
-| `├── Trabalho_Home.html` | Contém a estrutura HTML principal da aplicação, incluindo todas as seções.      |
-| `├── U-Playercss.css`    | Define os estilos visuais e as regras de responsividade para todo o site.       |
-| `├── script.js`          | Lógica JavaScript para navegação, gerenciamento de dados, carrinho de compras, autenticação de usuários e simulação de operações CRUD. |
-| `└── logo.jpg`           | O arquivo de imagem que representa o logotipo da U-Player Online Store.           |
-
-[postman-register-client]: スクリーンショット%202025-06-23%20143644.png
-[postman-register-admin]: スクリーンショット%202025-06-23%20144015.png
-[postman-promote-admin]: スクリーンショット%202025-06-23%20145127.png
-[postman-list-users]: スクリーンショット%202025-06-23%20145133.png
-[postman-error-admin-change]: スクリーンショット%202025-06-23%20144114.png
-[postman-create-product]: スクリーンショット%202025-06-23%20151430.png
-[postman-list-products]: スクリーンショット%202025-06-23%20151449.png
-[postman-update-product]: スクリーンショット%202025-06-23%20151620.png
-[postman-delete-product]: スクリーンショット%202025-06-23%20143055.png
-[postman-purchase]: スクリーンショット%202025-06-23%20151612.png
